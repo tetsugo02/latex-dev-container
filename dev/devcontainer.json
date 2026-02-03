@@ -1,0 +1,93 @@
+{
+	"name": "latex-templates",
+	"image": "ghcr.io/tetsugo02/latex-dev:latest",
+	"customizations": {
+		"vscode": {
+			"extensions": ["James-Yu.latex-workshop", "oderwat.indent-rainbow"],
+			"settings": {
+				"latex-workshop.latex.outDir": "%DIR%/build",
+				"latex-workshop.latex.autoBuild.run": "onSave",
+				"latex-workshop.bibtex-fields.sort.enabled": true,
+				"latex-workshop.formatting.latex": "latexindent",
+				"latex-workshop.intellisense.package.enabled": true,
+				"latex-workshop.formatting.latexindent.path": "latexindent",
+				"latex-workshop.bibtex-format.sort.enabled": true,
+				"editor.formatOnSave": true,
+				"editor.tabSize": 2,
+				"editor.insertSpaces": true,
+				"editor.detectIndentation": false,
+
+				"editor.wordWrap": "on",
+				"editor.wordSeparators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?。．、，（）「」『』［］｛｝《》てにをはがのともへでや ",
+				"editor.suggestSelection": "recentlyUsedByPrefix",
+				"editor.suggest.snippetsPreventQuickSuggestions": true,
+				"editor.unicodeHighlight.allowedCharacters": {
+					"，": true,
+					"．": true,
+					"！": true,
+					"？": true,
+					"［": true,
+					"］": true,
+					"｛": true,
+					"｝": true,
+					"＜": true,
+					"＞": true,
+					"。": false,
+					"、": false
+				},
+				"latex-workshop.latex.tools": [
+					{
+						"name": "latexmk-jp-thesis-lualatex",
+						"command": "latexmk",
+						"args": [
+							"-lualatex",
+							"-synctex=1",
+							"-interaction=nonstopmode",
+							"-file-line-error",
+							"-shell-escape",
+							"-outdir=%OUTDIR%",
+							"%DOC%"
+						]
+					}
+				],
+				"latex-workshop.latex.recipes": [
+					{
+						"name": "latexmk-jp-thesis-lualatex",
+						"tools": ["latexmk-jp-thesis-lualatex"]
+					}
+				],
+				"latex-workshop.latex.autoClean.run": "onFailed",
+				"latex-workshop.latex.clean.method": "glob",
+				"latex-workshop.latex.clean.fileTypes": [
+					"*.acn",
+					"*.acr",
+					"*.alg",
+					"*.aux",
+					"*.bbl",
+					"*.blg",
+					"*.dvi",
+					"*.fdb_latexmk",
+					"*.fls",
+					"*.glg",
+					"*.glo",
+					"*.gls",
+					"*.idx",
+					"*.ind",
+					"*.ist",
+					"*.lof",
+					"*.lot",
+					"*.nav",
+					"*.out",
+					"*.snm",
+					"*.synctex.gz",
+					"*.synctex.gz(busy)",
+					"*.synctex(busy)",
+					"*.toc",
+					"*.vrb",
+					"*_minted*",
+					"*.log"
+				]
+			}
+		}
+	}
+}
